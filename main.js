@@ -4,7 +4,7 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 
 // const config = require('./config.json')
 
-client.once('ready', () => {
+client.on('ready', () => {
     console.log('Paimon is online!');
 
     client.user.setActivity('YOUR ಠ_ಠ   !Companion', { type: 'LOYAL' });
