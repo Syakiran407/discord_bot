@@ -16,6 +16,8 @@ snorlaxGif = "https://tenor.com/view/game-of-thrones-winter-is-coming-the-hound-
 bannedWords = ["nitro", "Nitro"]
 bannedWords2 = ["free", "Free", "code", "Code"]
 
+
+
 client.on('message', msg => {
 
     //check for permission to post
@@ -28,7 +30,7 @@ client.on('message', msg => {
     //replies with the most recent deleted message
     if(msg.content.includes("!paimonerror"))
     {
-        let channel = client.channels.cache.get("930882978639396914");
+        let channel = client.channels.cache.get("930875215309864991");
 
         channel.messages.fetch({ limit: 1 }).then(messages => 
         {
@@ -73,7 +75,13 @@ client.on('message', msg => {
     //     return;
     // }
 
-    if (bannedWords.some(word => msg.content.includes(word))&&bannedWords2.some(word => msg.content.includes(word))) 
+    const paragraph = bannedWords;
+
+    const capturingRegex = /(Discord|nitro|Nitro|free|Free)/g;
+
+    const found = paragraph.match(capturingRegex);
+
+    if (found.some(word => msg.content.includes(word))) 
     {
         //gives reason for deletion
         if(permision.includes("SEND_MESSAGES"))
@@ -83,7 +91,7 @@ client.on('message', msg => {
         
         //logs the message in my private channel
         newString = msg.content.replace('@', '*');
-        client.channels.cache.get("930882978639396914").send(msg.author.username + " wrote in "+ msg.channel.name +": \n" + newString);
+        client.channels.cache.get("930875215309864991").send(msg.author.username + " wrote in "+ msg.channel.name +": \n" + newString);
     
         msg.delete(1000);
     }
