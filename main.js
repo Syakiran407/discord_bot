@@ -7,7 +7,8 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 client.once('ready', () => {
     console.log('Paimon is online!');
 
-    client.user.setActivity('your ಠ_ಠ   !companion', { type: 'LOYAL' });
+    //client.user.setActivity('your ಠ_ಠ   !companion', { type: 'LOYAL' });
+    client.user.setActivity('you ಠ_ಠ   !animations', { type: 'WATCHING' });
 });
 
 gif = "https://tenor.com/view/genshin-impact-paimon-gif-18640817"
