@@ -16,8 +16,6 @@ snorlaxGif = "https://tenor.com/view/game-of-thrones-winter-is-coming-the-hound-
 bannedWords = ["nitro", "Nitro"]
 bannedWords2 = ["free", "Free", "code", "Code"]
 
-
-
 client.on('message', msg => {
 
     //check for permission to post
@@ -30,7 +28,7 @@ client.on('message', msg => {
     //replies with the most recent deleted message
     if(msg.content.includes("!paimonerror"))
     {
-        let channel = client.channels.cache.get("930882978639396914");
+        let channel = client.channels.cache.get("930875215309864991");
 
         channel.messages.fetch({ limit: 1 }).then(messages => 
         {
@@ -39,16 +37,32 @@ client.on('message', msg => {
         })
     }
 
-    //shares link to FAQ list of animations
-    // if(msg.content.includes("!animations"))
+    // if(msg.content.includes("!paimonhelp"))
     // {
     //     if(permision.includes("SEND_MESSAGES"))
     //     {
-    //         msg.channel.send("For a list of animations used, please see the FAQ created by Snorlax:\nhttps://extoryer.wixsite.com/sebfaq/post/sebastian-s-animations-dark-souls");
+    //         msg.channel.send("Brunei Game Devs LinkTree:\nhttps://linktr.ee/brugamedev");
     //     }
     // }
+
+    if(msg.content.includes("!linktree"))
+    {
+        if(permision.includes("SEND_MESSAGES"))
+        {
+            msg.channel.send("Brunei Game Devs LinkTree:\nhttps://linktr.ee/brugamedev");
+        }
+    }
+
+    //shares link to FAQ list of itch io games
+    if(msg.content.includes("!itchiobgd"))
+    {
+        if(permision.includes("SEND_MESSAGES"))
+        {
+            msg.channel.send("list of games made by Bruneians\nhttps://brugamedev.itch.io/");
+        }
+    }
     
-    //sends a gif of the hound
+    //sends a gif of paimon
     if (msg.mentions.has(client.user)&&!msg.mentions.everyone)
     {
         if(permision.includes("SEND_MESSAGES"))
@@ -85,7 +99,7 @@ client.on('message', msg => {
         
         //logs the message in my private channel
         newString = msg.content.replace('@', '*');
-        client.channels.cache.get("930882978639396914").send(msg.author.username + " wrote in "+ msg.channel.name +": \n" + newString);
+        client.channels.cache.get("930875215309864991").send(msg.author.username + " wrote in "+ msg.channel.name +": \n" + newString);
     
         msg.delete(1000);
     }
