@@ -18,7 +18,7 @@ snorlaxGif = "https://tenor.com/view/game-of-thrones-winter-is-coming-the-hound-
 bannedWords = ["nitro", "Nitro"]
 bannedWords2 = ["free", "Free", "code", "Code"]
 
-client.once('message', msg => {
+client.on('message', msg => {
 
     //check for permission to post
     permision = msg.channel.permissionsFor(client.user);
