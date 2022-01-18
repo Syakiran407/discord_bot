@@ -1,6 +1,6 @@
-const {Client, Intents} = require('discord.js')
+const {Client, Intents} = require('discord.js');
 
-const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]})
+const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
 
 
 // const config = require('./config.json')
@@ -108,4 +108,4 @@ client.on('message', msg => {
 
 });
 
-client.login(process.env.DJS_TOKEN)
+client.login(process.env.DJS_TOKEN);
