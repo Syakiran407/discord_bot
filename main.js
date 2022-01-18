@@ -15,10 +15,10 @@ client.once('ready', () => {
 gif = "https://tenor.com/view/genshin-impact-paimon-gif-18640817"
 snorlaxGif = "https://tenor.com/view/game-of-thrones-winter-is-coming-the-hound-dont-point-your-finger-gif-11638484"
 
-bannedWords = ["nitro", "Nitro", "airdrop", "Airdrop"]
+bannedWords = ["nitro", "Nitro"]
 bannedWords2 = ["free", "Free", "code", "Code"]
 
-client.on('message', msg => {
+client.once('message', msg => {
 
     //check for permission to post
     permision = msg.channel.permissionsFor(client.user);
